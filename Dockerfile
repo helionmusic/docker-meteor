@@ -18,8 +18,7 @@ RUN curl -SL https://install.meteor.com/?release=1.0.4.1 -o /tmp/meteor/inst \
     && chmod +x /tmp/meteor/inst \
     && /tmp/meteor/inst \
     && rm -rf /tmp/meteor \
-    && npm install -g demeteorizer@4.3.0 \
-    && npm cache clear
+    && npm install -g demeteorizer@4.3.0
 
 VOLUME /app
 WORKDIR /app
