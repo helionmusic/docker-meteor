@@ -14,9 +14,7 @@ ENV TARBALL_URL_OVERRIDE https://github.com/DanielDent/docker-meteor/releases/do
 
 COPY meteor-installer.patch /tmp/meteor/meteor-installer.patch
 COPY vboxsf-shim.sh /usr/local/bin/vboxsf-shim
-RUN curl -SL https://install.meteor.com/ -o /tmp/meteor/inst \
-    && sed -e "s/^RELEASE=.*/RELEASE=\"\$METEOR_VERSION\"/" /tmp/meteor/inst > /tmp/meteor/inst-canonical \
-    && patch /tmp/meteor/inst /tmp/meteor/meteor-installer.patch \
+RUN curl -SL https://install.meteor.com/?release=1.0.4.1 -o /tmp/meteor/inst \
     && chmod +x /tmp/meteor/inst \
     && /tmp/meteor/inst \
     && rm -rf /tmp/meteor \
