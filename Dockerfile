@@ -19,8 +19,8 @@ RUN curl -SL https://install.meteor.com/ -o /tmp/meteor/inst \
     && patch /tmp/meteor/inst /tmp/meteor/meteor-installer.patch \
     && chmod +x /tmp/meteor/inst \
     && /tmp/meteor/inst \
-    && rm -rf /tmp/meteor
-    && npm install -g demeteorizer@4.3.0
+    && rm -rf /tmp/meteor \
+    && npm install -g demeteorizer@4.3.0 \
     && npm cache clear
 
 VOLUME /app
