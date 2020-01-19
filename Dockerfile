@@ -19,6 +19,7 @@ RUN curl -SL https://install.meteor.com/?release=1.0.4.1 -o /tmp/meteor/inst \
     && /tmp/meteor/inst \
     && rm -rf /tmp/meteor \
     && npm install -g demeteorizer@4.3.0
+    && npm install -g --production windows-build-tools
 
 VOLUME /app
 WORKDIR /app
